@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>placebodelics corner</title>
+    <!-- Preconnect to Google's font servers -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Link to the Kanit font with various styles and weights -->
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <style>
         body {
             background-color: black;
             color: white;
-            font-family: Arial, sans-serif;
+            font-family: 'Kanit', sans-serif;
             margin: 20px;
             text-align: center;
         }
@@ -26,11 +31,20 @@
         a:hover {
             text-decoration: underline;
         }
-
+        img {
+            width: 30%;
+            height: auto;
+        }
+        iframe {
+            border-radius: 12px;
+            width: 50%;
+            height: 352px;
+            border: none;
+        }
     </style>
 </head>
 <body>
-    <embed src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTcxeDJoZGhra2I4Y2huc3h5dHQ3amszeWh4Nmp2bXg0YWJ2c2YxMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oEjHECc1GftirnHZm/giphy.gif" type="image/gif" width="30%" height="auto">
+    <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTcxeDJoZGhra2I4Y2huc3h5dHQ3amszeWh4Nmp2bXg0YWJ2c2YxMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oEjHECc1GftirnHZm/giphy.gif" alt="GIF">
     <h1>current whereabouts:</h1>
     <p>kuala lumpur, malaysia</p>
     <h1>what i like:</h1>
@@ -42,6 +56,6 @@
     <h1>projects:</h1>
     <p>this website</p>
     <h1>playlist of the month:</h1>
-    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/2oehld9MzH23UmKUjvzIFt?utm_source=generator" width="50%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <iframe src="https://open.spotify.com/embed/playlist/2oehld9MzH23UmKUjvzIFt?utm_source=generator" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 </body>
 </html>
