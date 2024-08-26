@@ -40,12 +40,14 @@
         img {
             width: 30%;
             height: auto;
+            max-width: 100%;
         }
         iframe {
             border-radius: 12px;
             width: 50%;
             height: 352px;
             border: none;
+            max-width: 100%;
         }
         section {
             margin-bottom: 40px;
@@ -61,6 +63,65 @@
             margin: 20px auto;
             width: 60%;
             border-radius: 10px;
+        }
+        
+        #chatbox {
+            width: 80%;
+            margin: 0 auto;
+            background: #333;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: left;
+        }
+        #chat-messages {
+            height: 300px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+            padding: 10px;
+            background: #222;
+            border-radius: 5px;
+        }
+        #chat-input {
+            width: 70%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #444;
+            color: white;
+        }
+        #chat-submit {
+            width: 25%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #FF77E2;
+            color: black;
+            cursor: pointer;
+        }
+        .typing {
+            font-style: italic;
+            color: #888;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                margin: 10px;
+            }
+            h1 {
+                font-size: 2.5em;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+            p {
+                font-size: 1.2em;
+            }
+            img, iframe {
+                width: 90%;
+            }
+            #chatbox, .testimonial {
+                width: 90%;
+            }
         }
     </style>
 </head>
@@ -86,17 +147,83 @@
         <p>this website</p>
         <p>nsfw script generator web-app for onlyfans/fansly models</p>
     </section>
-
+    
     <section>
-        <h2>testimonials</h2>
-        <div class="testimonial">
-            <p>"placebodelic is non judgmental and always up for a good time. highly recommended!" - John Doe</p>
-        </div>
+        <h2>chat with me</h2>
+        <div id="chatbox">
+        <div id="chat-messages"></div>
+        <input type="text" id="chat-input" placeholder="Type your message...">
+        <button id="chat-submit">Send</button>
+       </div>
+        
     </section>
 
     <section>
         <h2>playlist of the month</h2>
         <iframe src="https://open.spotify.com/embed/playlist/2oehld9MzH23UmKUjvzIFt?utm_source=generator" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </section>
+    
+    <section>
+        <h2>testimonials</h2>
+        <div class="testimonial">
+            <p>"placebodelic is non judgmental and always up for a good time. highly recommended!" - John Doe</p>
+        </div>
+    </section>
+    
+
+    <script>
+        const chatMessages = document.getElementById('chat-messages');
+        const chatInput = document.getElementById('chat-input');
+        const chatSubmit = document.getElementById('chat-submit');
+
+        chatSubmit.addEventListener('click', sendMessage);
+        chatInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        function sendMessage() {
+            const message = chatInput.value.trim();
+            if (message) {
+                addMessageToChat('You: ' + message);
+                sendToAPI(message);
+                chatInput.value = '';
+            }
+        }
+
+        function addMessageToChat(message, isTyping = false) {
+            const messageElement = document.createElement('p');
+            messageElement.textContent = message;
+            if (isTyping) {
+                messageElement.classList.add('typing');
+            }
+            chatMessages.appendChild(messageElement);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            return messageElement;
+        }
+
+        function sendToAPI(message) {
+            const typingElement = addMessageToChat('AI is typing...', true);
+            
+            fetch('/api/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ message: message }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                typingElement.remove();
+                addMessageToChat('AI: ' + data.response);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                typingElement.remove();
+                addMessageToChat('Error: Unable to get response from API');
+            });
+        }
+    </script>
 </body>
 </html>
