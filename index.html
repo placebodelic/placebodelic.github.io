@@ -3,227 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>placebodelics corner</title>
+    <title>placebodelic's corner</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #FF77E2;
+            --background-color: #111;
+            --text-color: #fff;
+            --secondary-background: #333;
+        }
+
         body {
-            background-color: black;
-            color: white;
+            background-color: var(--background-color);
+            color: var(--text-color);
             font-family: 'Kanit', sans-serif;
-            margin: 20px;
+            margin: 0;
+            padding: 20px;
             text-align: center;
             text-transform: lowercase;
+            line-height: 1.6;
         }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
         h1 {
-            color: white;
-            font-size: 3.5em;
+            color: var(--text-color);
+            font-size: 4em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(255, 119, 226, 0.5);
         }
+
         h2 {
-            color: #FF77E2;
-            font-size: 2em;
-            margin-top: 20px;
+            color: var(--primary-color);
+            font-size: 2.5em;
+            margin-top: 40px;
+            margin-bottom: 20px;
         }
+
         p {
-            font-size: 1.5em;
+            font-size: 1.2em;
+            margin-bottom: 15px;
         }
+
         a {
-            color: #FF77E2;
+            color: var(--primary-color);
             text-decoration: none;
+            transition: color 0.3s ease;
         }
+
         a:hover {
+            color: #ff9ef0;
             text-decoration: underline;
         }
+
         img {
-            width: 30%;
+            width: 50%;
+            max-width: 400px;
             height: auto;
-            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(255, 119, 226, 0.3);
+            transition: transform 0.3s ease;
         }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+
         iframe {
             border-radius: 12px;
-            width: 50%;
+            width: 80%;
+            max-width: 600px;
             height: 352px;
             border: none;
-            max-width: 100%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
+
         section {
-            margin-bottom: 40px;
+            margin-bottom: 60px;
+            padding: 20px;
+            background-color: rgba(51, 51, 51, 0.5);
+            border-radius: 15px;
+            transition: background-color 0.3s ease;
         }
+
+        section:hover {
+            background-color: rgba(51, 51, 51, 0.7);
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
         .gallery img {
-            width: 20%;
-            margin: 10px;
+            width: calc(25% - 20px);
+            max-width: 200px;
             border-radius: 10px;
         }
+
         .testimonial {
-            background: #333;
+            background: var(--secondary-background);
             padding: 20px;
             margin: 20px auto;
-            width: 60%;
-            border-radius: 10px;
-        }
-        
-        #chatbox {
             width: 80%;
-            margin: 0 auto;
-            background: #333;
+            max-width: 600px;
             border-radius: 10px;
-            padding: 20px;
-            text-align: left;
-        }
-        #chat-messages {
-            height: 300px;
-            overflow-y: auto;
-            margin-bottom: 10px;
-            padding: 10px;
-            background: #222;
-            border-radius: 5px;
-        }
-        #chat-input {
-            width: 70%;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            background: #444;
-            color: white;
-        }
-        #chat-submit {
-            width: 25%;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            background: #FF77E2;
-            color: black;
-            cursor: pointer;
-        }
-        .typing {
-            font-style: italic;
-            color: #888;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
         @media (max-width: 768px) {
             body {
-                margin: 10px;
+                padding: 10px;
             }
+
             h1 {
-                font-size: 2.5em;
+                font-size: 3em;
             }
+
             h2 {
-                font-size: 1.5em;
+                font-size: 2em;
             }
+
             p {
-                font-size: 1.2em;
+                font-size: 1em;
             }
+
             img, iframe {
                 width: 90%;
             }
-            #chatbox, .testimonial {
-                width: 90%;
+
+            .testimonial {
+                width: 95%;
+            }
+
+            .gallery img {
+                width: calc(50% - 20px);
             }
         }
     </style>
 </head>
 <body>
-    <h1><strong>placebodelic</strong></h1>
-    <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTcxeDJoZGhra2I4Y2huc3h5dHQ3amszeWh4Nmp2bXg0YWJ2c2YxMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oEjHECc1GftirnHZm/giphy.gif" alt="GIF">
+    <div class="container">
+        <header>
+            <h1><strong>placebodelic</strong></h1>
+            <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTcxeDJoZGhra2I4Y2huc3h5dHQ3amszeWh4Nmp2bXg0YWJ2c2YxMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oEjHECc1GftirnHZm/giphy.gif" alt="Psychedelic GIF">
+        </header>
 
-    <section>
-        <h2>about me</h2>
-        <p>sound engineer, urban explorer, biohacker, 3rd percentile of conscientiousness.</p>
-        <p>currently managing several fansly accounts. if interested, contact me on <a href="https://x.com/placebodelic" target="_blank">X/Twitter</a></p>
-        <p><strong>likes:</strong> pharmacology, psychedelics, biohacking, artificial intelligence, philosophy.</p>
-        <p><strong>dislikes:</strong> mean people!!</p>
-    </section>
+        <section id="about">
+            <h2>about me</h2>
+            <p>sound engineer, urban explorer, biohacker, 3rd percentile of conscientiousness.</p>
+            <p>currently managing several fansly accounts. if interested, contact me on <a href="https://x.com/placebodelic" target="_blank">X/Twitter</a></p>
+            <p><strong>likes:</strong> pharmacology, psychedelics, biohacking, artificial intelligence, philosophy.</p>
+            <p><strong>dislikes:</strong> mean people!!</p>
+        </section>
 
-    <section>
-        <h2>gear</h2>
-        <p>lenovo thinkpad l570 linux mint, iphone 11</p>
-    </section>
+        <section id="gear">
+            <h2>gear</h2>
+            <p>lenovo thinkpad l570 linux mint, iphone 11</p>
+        </section>
 
-    <section>
-        <h2>projects</h2>
-        <p>this website</p>
-        <p>nsfw script generator web-app for onlyfans/fansly models</p>
-    </section>
+        <section id="projects">
+            <h2>projects</h2>
+            <p>this website</p>
+            <p>nsfw script generator web-app for onlyfans/fansly models</p>
+        </section>
     
-    <section>
-        <h2>get inspiration</h2>
-        <div id="chatbox">
-        <div id="chat-messages"></div>
-        <input type="text" id="chat-input" placeholder="Type your message...">
-        <button id="chat-submit">Send</button>
-       </div>
-        
-    </section>
-
-    <section>
-        <h2>playlist of the month</h2>
-        <iframe src="https://open.spotify.com/embed/playlist/2oehld9MzH23UmKUjvzIFt?utm_source=generator" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-    </section>
+        <section id="playlist">
+            <h2>playlist of the month</h2>
+            <iframe src="https://open.spotify.com/embed/playlist/2oehld9MzH23UmKUjvzIFt?utm_source=generator" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </section>
     
-    <section>
-        <h2>testimonials</h2>
-        <div class="testimonial">
-            <p>"placebodelic is non judgmental and always up for a good time. highly recommended!" - John Doe</p>
-        </div>
-    </section>
-    
-
-    <script>
-        const chatMessages = document.getElementById('chat-messages');
-        const chatInput = document.getElementById('chat-input');
-        const chatSubmit = document.getElementById('chat-submit');
-
-        chatSubmit.addEventListener('click', sendMessage);
-        chatInput.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                sendMessage();
-            }
-        });
-
-        function sendMessage() {
-            const message = chatInput.value.trim();
-            if (message) {
-                addMessageToChat('You: ' + message);
-                sendToAPI(message);
-                chatInput.value = '';
-            }
-        }
-
-        function addMessageToChat(message, isTyping = false) {
-            const messageElement = document.createElement('p');
-            messageElement.textContent = message;
-            if (isTyping) {
-                messageElement.classList.add('typing');
-            }
-            chatMessages.appendChild(messageElement);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-            return messageElement;
-        }
-
-        function sendToAPI(message) {
-            const typingElement = addMessageToChat('AI is typing...', true);
-            
-            fetch('/api/chat', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ message: message }),
-            })
-            .then(response => response.json())
-            .then(data => {
-                typingElement.remove();
-                addMessageToChat('AI: ' + data.response);
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                typingElement.remove();
-                addMessageToChat('Error: Unable to get response from API');
-            });
-        }
-    </script>
+        <section id="testimonials">
+            <h2>testimonials</h2>
+            <div class="testimonial">
+                <p>"placebodelic is non judgmental and always up for a good time. highly recommended!" - John Doe</p>
+            </div>
+        </section>
+    </div>
 </body>
 </html>
