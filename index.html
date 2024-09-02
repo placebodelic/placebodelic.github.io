@@ -4,178 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>placebodelic's corner</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-color: #FF77E2;
-            --background-color: #111;
-            --text-color: #fff;
-            --secondary-background: #333;
-        }
-
         body {
-            background-color: var(--background-color);
-            color: var(--text-color);
-            font-family: 'Kanit', sans-serif;
+            background: linear-gradient(to bottom right, #333, #111);
+            color: #fff;
+            font: 20px/1.6 Kanit, sans-serif;
             margin: 0;
             padding: 20px;
             text-align: center;
             text-transform: lowercase;
-            line-height: 1.6;
+            min-height: 100vh;
         }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        h1 {
-            color: var(--text-color);
-            font-size: 4em;
-            margin-bottom: 20px;
-        }
-
-        h2 {
-            color: var(--primary-color);
-            font-size: 2.5em;
-            margin-top: 40px;
-            margin-bottom: 20px;
-        }
-
-        p {
-            font-size: 1.2em;
-            margin-bottom: 15px;
-        }
-
-        a {
-            color: var(--primary-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            color: #ff9ef0;
-            text-decoration: underline;
-        }
-
-        img {
-            width: 50%;
-            max-width: 400px;
-            height: auto;
-            border-radius: 15px;
-            transition: transform 0.3s ease;
-        }
-
-        img:hover {
-            transform: scale(1.05);
-        }
-
+        .container { max-width: 800px; margin: auto; }
+        h1 { font-size: min(8vw, 3.5em); }
+        h2 { color: #FF77E2; font-size: min(6vw, 2.5em); margin-top: 1em; }
+        a { color: #FF77E2; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        img, iframe { max-width: 100%; border-radius: 15px; }
+        img { margin-bottom: 20px; }
         iframe {
-            border-radius: 12px;
-            width: 80%;
-            max-width: 600px;
-            height: 352px;
-            border: none;
+            aspect-ratio: 16/9;
+            height: 450px;
+            width: 100%;
         }
-
-        section {
-            margin-bottom: 60px;
-            padding: 20px;
-        }
-
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .gallery img {
-            width: calc(25% - 20px);
-            max-width: 200px;
-            border-radius: 10px;
-        }
-
         .testimonial {
+            background: rgba(51, 51, 51, 0.5);
+            border-radius: 10px;
             padding: 20px;
-            margin: 20px auto;
-            width: 80%;
-            max-width: 600px;
+            margin: 20px 0;
         }
-
-        @media (max-width: 768px) {
-            body {
-                padding: 10px;
-            }
-
-            h1 {
-                font-size: 3em;
-            }
-
-            h2 {
-                font-size: 2em;
-            }
-
-            p {
-                font-size: 1em;
-            }
-
-            img, iframe {
-                width: 90%;
-            }
-
-            .testimonial {
-                width: 95%;
-            }
-
-            .gallery img {
-                width: calc(50% - 20px);
-            }
+        @media (max-width: 600px) {
+            body { padding: 10px; font-size: 18px; }
+            iframe { height: 300px; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1><strong>placebodelic</strong></h1>
-            <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTcxeDJoZGhra2I4Y2huc3h5dHQ3amszeWh4Nmp2bXg0YWJ2c2YxMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oEjHECc1GftirnHZm/giphy.gif" alt="Psychedelic GIF">
-        </header>
-
-        <section id="about">
-            <h2>about me</h2>
-            <p>sound engineer, urban explorer, biohacker, 3rd percentile of conscientiousness.</p>
-            <p>currently managing several fansly accounts. if interested, contact me on <a href="https://x.com/placebodelic" target="_blank">X/Twitter</a></p>
-            <p><strong>likes:</strong> pharmacology, psychedelics, biohacking, artificial intelligence, philosophy.</p>
-            <p><strong>dislikes:</strong> mean people!!</p>
-        </section>
-
-        <section id="gear">
-            <h2>gear</h2>
-            <p>lenovo thinkpad l570 linux mint, iphone 11</p>
-        </section>
-
-        <section id="projects">
-            <h2>projects</h2>
-            <p>this website</p>
-            <p>https://chatbotnsfw.com/</p>
-        </section>
-    
-        <section id="playlist">
-            <h2>playlist of the month</h2>
-            <iframe src="https://open.spotify.com/embed/playlist/2oehld9MzH23UmKUjvzIFt?utm_source=generator" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        </section>
-    
-        <section id="testimonials">
-            <h2>testimonials</h2>
-            <div class="testimonial">
-                <p>"placebodelic is non judgmental and always up for a good time. highly recommended!" - John Doe</p>
-            </div>
-        </section>
+        <h1>placebodelic</h1>
+        <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTcxeDJoZGhra2I4Y2huc3h5dHQ3amszeWh4Nmp2bXg0YWJ2c2YxMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oEjHECc1GftirnHZm/giphy.gif" alt="Psychedelic GIF">
+        <main>
+            <section id="about">
+                <h2>about me</h2>
+                <p>e/acc, sound engineering, urban exploring, biohacking, skateboarding</p>
+                <p>running a social media marketing agency for sexworkers. if interested, contact me on <a href="https://x.com/placebodelic" target="_blank">x</a></p>
+                <p><strong>likes:</strong> pharmacology, psychedelics, biohacking, artificial intelligence, philosophy, sun exposure, metabolic health, longevity, microbiome research</p>
+            </section>
+            <section id="gear">
+                <h2>gear</h2>
+                <p>thinkpad l570 linux mint</p>
+            </section>
+            <section id="projects">
+                <h2>projects</h2>
+                <p>this website: personal nexus of ideas and experiments</p>
+                <p><a href="https://chatbotnsfw.com/" target="_blank">https://chatbotnsfw.com/</a>: revolutionizing adult content interaction</p>
+            </section>
+            <section id="health">
+                <h2>biohacking protocol</h2>
+                <p>animal-based nutrition: cheese (casein boost), eggs (choline source), steak (nutrient density)</p>
+                <p>carnivore transition: optimizing metabolic flexibility, upcoming 90-day blood panel analysis</p>
+                <p>creatine 5g daily: cognitive enhancement, muscle efficiency</p>
+                <p>bacopa monnieri: memory augmentation, stress resilience</p>
+                <p><strong>sun</strong></p>
+            </section>
+            <section id="experiences">
+                <h2>personal experiments</h2>
+                <p>creatine 5g daily - enhanced muscular energy, improved cognition</p>
+                <p>bacopa - sharpened memory recall, reduced anxiety</p>
+                <p>cerebrolysin - boosted neuroplasticity, accelerated learning</p>
+                <p>modafinil - laser focus, increased productivity</p>
+                <p>pregabalin 150-300mg - anxiety relief, enhanced social fluidity</p>
+                <p>psilocybin 3g dried - ego dissolution, profound insights</p>
+                <p>lsd 50-100µg - heightened creativity, sensory enhancement</p>
+                <p>keto/carnivore diet - mental clarity, stable energy levels</p>
+                <p>fecal matter transplant - microbiome diversity, improved digestion</p>
+                <p>fasting (intermittent/extended) - cellular renewal, mental acuity</p>
+            </section>
+            <section id="playlist">
+                <h2>night drive</h2>
+                <iframe src="https://open.spotify.com/embed/playlist/2oehld9MzH23UmKUjvzIFt?utm_source=generator" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </section>
+        </main>
     </div>
 </body>
 </html>
